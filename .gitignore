@@ -11,3 +11,8 @@ tests/
 # Local Python virtual environment
 .venv/
 .vercel
+
+.venv/
+__pycache__/
+.vercel/
+*.pyc
