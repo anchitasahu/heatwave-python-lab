@@ -16,9 +16,9 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "datasets"
-WEB_DIR = ROOT / "web"
+WEB_DIR = Path(__file__).resolve().parent
 LOG = logging.getLogger("climate-dashboard")
 
 CITY_DATASETS = {
