@@ -10,3 +10,4 @@ tests/
 
 # Local Python virtual environment
 .venv/
+.vercel
