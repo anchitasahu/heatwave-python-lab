@@ -602,43 +602,53 @@ def experiment_six(query: dict[str, list[str]]) -> dict[str, object]:
     }
 
 
+def api_response(
+    request_path: str, query: dict[str, list[str]]
+) -> tuple[dict[str, object], int]:
+    try:
+        if request_path == "/api/overview":
+            payload = overview()
+        elif request_path == "/api/experiments/1":
+            payload = experiment_one(query)
+        elif request_path == "/api/experiments/2":
+            payload = experiment_two()
+        elif request_path == "/api/experiments/3":
+            payload = experiment_three(query)
+        elif request_path == "/api/experiments/4":
+            payload = experiment_four(query)
+        elif request_path == "/api/experiments/5":
+            payload = experiment_five(query)
+        elif request_path == "/api/experiments/6":
+            payload = experiment_six(query)
+        elif request_path == "/api/stations":
+            stations = sorted(
+                {
+                    row["Mandal"].strip()
+                    for row in read_rows(TELANGANA_FILE)
+                    if row.get("Mandal", "").strip()
+                }
+            )
+            payload = {"stations": stations}
+        elif request_path == "/api/catalog":
+            payload = {"datasets": dataset_catalog()}
+        else:
+            return {"error": "API endpoint not found."}, 404
+    except (ValueError, OSError, csv.Error, KeyError) as error:
+        LOG.exception("Request failed for %s", request_path)
+        return {"error": str(error)}, 400 if isinstance(error, ValueError) else 500
+    return payload, 200
+
+
 class DashboardHandler(BaseHTTPRequestHandler):
     server_version = "ClimateDashboard/1.0"
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
-        query = parse_qs(parsed.query)
         if parsed.path in {"/", "/index.html", "/styles.css", "/app.js"}:
             self.serve_static(parsed.path)
             return
-        try:
-            if parsed.path == "/api/overview":
-                payload = overview()
-            elif parsed.path == "/api/experiments/1":
-                payload = experiment_one(query)
-            elif parsed.path == "/api/experiments/2":
-                payload = experiment_two()
-            elif parsed.path == "/api/experiments/3":
-                payload = experiment_three(query)
-            elif parsed.path == "/api/experiments/4":
-                payload = experiment_four(query)
-            elif parsed.path == "/api/experiments/5":
-                payload = experiment_five(query)
-            elif parsed.path == "/api/experiments/6":
-                payload = experiment_six(query)
-            elif parsed.path == "/api/stations":
-                stations = sorted({row["Mandal"].strip() for row in read_rows(TELANGANA_FILE) if row.get("Mandal", "").strip()})
-                payload = {"stations": stations}
-            elif parsed.path == "/api/catalog":
-                payload = {"datasets": dataset_catalog()}
-            else:
-                self.send_json({"error": "API endpoint not found."}, status=404)
-                return
-        except (ValueError, OSError, csv.Error, KeyError) as error:
-            LOG.exception("Request failed for %s", self.path)
-            self.send_json({"error": str(error)}, status=400 if isinstance(error, ValueError) else 500)
-            return
-        self.send_json(payload)
+        payload, status = api_response(parsed.path, parse_qs(parsed.query))
+        self.send_json(payload, status=status)
 
     def serve_static(self, request_path: str) -> None:
         filename = "index.html" if request_path == "/" else request_path.lstrip("/")

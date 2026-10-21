@@ -70,10 +70,15 @@ function showLoading(message = "Loading climate observations…") {
 }
 
 function showError(error) {
+  const message = error instanceof Error
+    ? error.message
+    : typeof error === "string"
+      ? error
+      : JSON.stringify(error);
   content.innerHTML = `
     <div class="error-state">
       <strong>Couldn’t load this experiment</strong>
-      <span>${escapeHtml(error.message || error)}</span>
+      <span>${escapeHtml(message)}</span>
       <button class="tool-button subtle" id="retry-button">Try again</button>
     </div>`;
   document.querySelector("#retry-button")?.addEventListener("click", loadCurrentPage);
