@@ -1,0 +1,51 @@
+id,file,category,description,rows,columns,source_repo,data_quality_note
+DS01,ds01_city_tmax_bangalore.csv,City daily temperature,Bengaluru daily Tavg/Tmin/Tmax/rain 1990-2022,11894,5,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,~5% Tmax and ~12% Tmin values missing
+DS02,ds02_city_tmax_chennai.csv,City daily temperature,Chennai daily Tavg/Tmin/Tmax/rain 1990-2022,11894,5,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,~9% Tmax / ~26% Tmin missing
+DS03,ds03_city_tmax_delhi.csv,City daily temperature,Delhi (Safdarjung) daily temperature/rain 1990-2022,11894,5,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,~4% Tmax missing
+DS04,ds04_city_tmax_lucknow.csv,City daily temperature,Lucknow daily temperature/rain 1990-2022,11894,5,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,~13% Tmax / ~30% Tmin missing
+DS05,ds05_city_tmax_mumbai.csv,City daily temperature,Mumbai (Santacruz) daily temperature/rain 1990-2022,11894,5,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,"~16% Tmax missing, ~21% Tmin missing"
+DS06,ds06_city_weather_bhubaneswar.csv,City daily temperature,"Bhubaneswar daily temp, wind, pressure 1990-2022",11935,11,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,"Some columns (snow, wpgt, tsun) entirely empty"
+DS07,ds07_city_weather_rourkela.csv,City daily temperature,"Rourkela daily temp, wind, pressure 2021-2022",426,11,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,"Some columns (snow, wpgt, tsun) entirely empty"
+DS08,ds08_popular_cities_56.csv,Multi-city daily weather,56 Indian cities daily tavg/tmin/tmax/prcp/wind,7056,9,github.com/adnankh-sketch/Rising_Temp_in_India,Wind-speed column empty; ~9% temperature gaps
+DS09,ds09_hourly_bengaluru.csv,City hourly weather,"Bengaluru hourly weather (maxtemp, humidity, wind, heat index)",96432,24,github.com/metabiswadeep/Weather-Forecasting,
+DS10,ds10_hourly_mumbai.csv,City hourly weather,"Mumbai hourly weather (maxtemp, humidity, wind, heat index)",96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS11,ds11_hourly_delhi.csv,City hourly weather,"Delhi hourly weather (maxtemp, humidity, wind, heat index)",96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS12,ds12_hourly_hyderabad.csv,City hourly weather,Hyderabad hourly weather,96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS13,ds13_hourly_jaipur.csv,City hourly weather,Jaipur hourly weather,96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS14,ds14_hourly_kanpur.csv,City hourly weather,Kanpur hourly weather,96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS15,ds15_hourly_nagpur.csv,City hourly weather,Nagpur hourly weather,96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS16,ds16_hourly_pune.csv,City hourly weather,Pune hourly weather,96432,25,github.com/metabiswadeep/Weather-Forecasting,
+DS17,ds17_delhi_climate_train.csv,Delhi climate,Delhi daily mean temp/humidity/wind/pressure 2013-2017,1462,5,github.com/KresnaFajri/New-Delhi-Climate-Data-Forecasting,
+DS18,ds18_delhi_climate_test.csv,Delhi climate,Delhi daily climate test split 2017,114,5,github.com/KresnaFajri/New-Delhi-Climate-Data-Forecasting,
+DS19,ds19_realtime_india_543_locations.csv,Real-time multi-location,"Real-time weather for 543 Indian locations (temp, humidity, wind, AQI)",35014,42,github.com/Deva3942/Weather-Trends-India-Real-Time-Weather-Insights,
+DS20,ds20_north_india_stations_weather.csv,Station weather,"North Indian stations (JK, PB, HP, HR, UP, RJ, DL...) daily temp/wind/pressure/rain 2015-2025",970339,15,github.com/Amit-o18/India-weather-data-analysis,Contains faulty sensor values (e.g. max_temp = 87 C); 970k rows
+DS21,ds21_six_cities_weather.csv,Multi-city daily weather,Six Indian cities daily max/min temp + rainfall,7310,13,github.com/unfazed-07/indian-cities-weather-dataset,
+DS22,ds22_indian_weather_snapshot.csv,Real-time multi-location,"Snapshot of current weather + air quality, Indian cities",74,25,github.com/arnabDAanalyst/Weather-and-Air-Quality-of-Indian-Cities-Analysis,
+DS23,ds23_aqi_weather_cleaned.csv,AQI + weather,46 cities AQI + temperature/humidity/wind (hourly),101568,20,github.com/Aayushiverse/India-AirQuality-46Cities,AQI has extreme outliers
+DS24,ds24_aqi_weather_dashboard.csv,AQI + weather,44 cities daily AQI + temp/humidity/wind/precip,4232,13,github.com/Aayushiverse/India-AirQuality-46Cities,
+DS25,ds25_imd_rainfall_1901_2015.csv,IMD rainfall,Subdivision-wise monthly rainfall 1901-2015,4116,19,github.com/saxenakrati09/Indian_Rainfall,Same IMD source as DS27/DS28 (different cut/columns)
+DS26,ds26_imd_district_rainfall_normal.csv,IMD rainfall,District-wise monthly rainfall normals,641,19,github.com/saxenakrati09/Indian_Rainfall,
+DS27,ds27_imd_subdivision_act_dep.csv,IMD rainfall,Subdivision actual vs departure rainfall,12456,20,github.com/Anoop-Grunt/Data_Mining_32,Same IMD source family as DS25/DS28
+DS28,ds28_imd_state_rainfall_1901_2017.csv,IMD rainfall,State-wise monthly rainfall 1901-2017,4187,22,github.com/dcsavinod/weather-and-rainfall-data-from-1901-to-2022,Same IMD source family as DS25/DS27
+DS29,ds29_india_monthly_temp_1901_2017.csv,Long-term temperature,All-India monthly mean temperature 1901-2017,117,18,github.com/Railkaryashal/Temperature-Prediction-India,
+DS30,ds30_india_rainfall_act_dep.csv,Monsoon rainfall,All-India monsoon actual rainfall & departure 1901-2016,116,11,github.com/imaginarycoder/Rainfall_Prediction_India,
+DS31,ds31_monsoon_central_2016.csv,Monsoon rainfall,Central India monsoon rainfall 1901-2016,116,11,github.com/vedant781999/Rainfall-Pattern-Analysis-and-Prediction,
+DS32,ds32_monsoon_northeast_2016.csv,Monsoon rainfall,North-East India monsoon rainfall 1901-2016,116,11,github.com/vedant781999/Rainfall-Pattern-Analysis-and-Prediction,
+DS33,ds33_monsoon_northwest_2016.csv,Monsoon rainfall,North-West India monsoon rainfall 1901-2016,116,11,github.com/vedant781999/Rainfall-Pattern-Analysis-and-Prediction,
+DS34,ds34_monsoon_south_peninsula_2016.csv,Monsoon rainfall,South Peninsula monsoon rainfall 1901-2016,116,11,github.com/vedant781999/Rainfall-Pattern-Analysis-and-Prediction,
+DS35,ds35_regions_live_observations.csv,Regional daily climate,"Recent live observations, 7 Indian regions",56,12,github.com/abhijitjawale09/sky-mirror-india,Only 56 rows (short recent window); provenance as published in source repo
+DS36,ds36_imd_gridded_tmax_2024.csv,IMD gridded,IMD gridded daily max temperature 2024,2562,7,github.com/abhijitjawale09/sky-mirror-india,IMD gridded points for 7 regions only
+DS37,ds37_imd_gridded_tmax_2025.csv,IMD gridded,IMD gridded daily max temperature 2025,2555,7,github.com/abhijitjawale09/sky-mirror-india,IMD gridded points for 7 regions only
+DS38,ds38_state_monthly_temp_rain.csv,State climate,"State-wise monthly temperature, rainfall and electricity demand 2015-",3168,5,github.com/kaushalkumarma2025/india-electricity-demand-panel-data,
+DS39,ds39_state_10day_forecast.csv,Forecast,"State-wise 10-day NWP forecast: temp, pressure, wind, rainfall",360,19,github.com/rohitsurya3010/Repository-name-india-weather-forecast,
+DS40,ds40_nwp_grid_forecast_india.csv,Forecast,"Day-1 NWP forecast grid over India (2m temp, humidity, wind, rain)",18753,17,github.com/rohitsurya3010/Repository-name-india-weather-forecast,
+DS41,ds41_imd_gridded_rainfall_2024.csv,IMD gridded,IMD gridded daily rainfall 2024,2562,7,github.com/abhijitjawale09/sky-mirror-india,
+DS42,ds42_imd_gridded_tmin_2024.csv,IMD gridded,IMD gridded daily min temperature 2024,2562,7,github.com/abhijitjawale09/sky-mirror-india,
+DS43,ds43_telangana_aws_apr_2022.csv,Weather-station (AWS),"Telangana mandal-level AWS: daily rain, min/max temp, humidity, wind - April 2022",17820,10,github.com/MahammadShareef/Telangana-weather-analysis,Daily mandal-level AWS slice (DS43-DS47 share one schema)
+DS44,ds44_telangana_aws_may_2022.csv,Weather-station (AWS),Telangana mandal-level AWS - May 2022 (contains missing readings),18414,10,github.com/MahammadShareef/Telangana-weather-analysis,Daily mandal-level AWS slice; ~265 genuinely missing wind readings
+DS45,ds45_telangana_aws_apr_2023.csv,Weather-station (AWS),Telangana mandal-level AWS - April 2023,17820,10,github.com/MahammadShareef/Telangana-weather-analysis,Daily mandal-level AWS slice (DS43-DS47 share one schema)
+DS46,ds46_telangana_aws_may_2023.csv,Weather-station (AWS),Telangana mandal-level AWS - May 2023 (peak 46.4 C),18414,10,github.com/MahammadShareef/Telangana-weather-analysis,Daily mandal-level AWS slice (DS43-DS47 share one schema)
+DS47,ds47_telangana_aws_apr_2024.csv,Weather-station (AWS),Telangana mandal-level AWS - April 2024,18360,10,github.com/MahammadShareef/Telangana-weather-analysis,Daily mandal-level AWS slice (DS43-DS47 share one schema)
+DS48,ds48_india_area_weighted_rainfall.csv,IMD rainfall,All-India area-weighted monthly rainfall 1901-2015,115,19,github.com/pankhuriigupta/india-climate-analysis,
+DS49,ds49_imd_gridded_tmin_2025.csv,IMD gridded,IMD gridded daily min temperature 2025,2555,7,github.com/abhijitjawale09/sky-mirror-india,
+DS50,ds50_insat_land_surface_temp.csv,Satellite,INSAT-3DR land/sea surface temperature + rainfall,36525,6,github.com/abhijitjawale09/sky-mirror-india,

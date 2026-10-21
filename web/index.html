@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1118">
+    <title>Heatwave Intelligence · Climate Lab</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Climate Lab dashboard">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span class="brand-name">climate<span>lab</span></span>
+        </a>
+        <div class="side-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-page="dashboard">
+            <span class="nav-icon icon-grid">▦</span><span>Overview</span>
+          </button>
+        </nav>
+        <div class="side-label experiments-label">EXPERIMENTS <span>06</span></div>
+        <nav class="experiment-nav" aria-label="Experiments">
+          <button class="nav-link" data-page="1"><span class="experiment-number">01</span><span>Station objects</span></button>
+          <button class="nav-link" data-page="2"><span class="experiment-number">02</span><span>City comparison</span></button>
+          <button class="nav-link" data-page="3"><span class="experiment-number">03</span><span>Locations & alerts</span></button>
+          <button class="nav-link" data-page="4"><span class="experiment-number">04</span><span>Climate analyzers</span></button>
+          <button class="nav-link" data-page="5"><span class="experiment-number">05</span><span>Sensor monitor</span></button>
+          <button class="nav-link" data-page="6"><span class="experiment-number">06</span><span>Climate summary</span></button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="sidebar-foot-icon">◉</div>
+          <div><strong>KJS-CES-01</strong><span>Climate intelligence lab</span></div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Climate lab</span><b>/</b><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="snapshot-pill"><i></i> CSV SNAPSHOT</span>
+            <button class="icon-button" id="refresh-button" aria-label="Refresh dashboard data" title="Refresh data">↻</button>
+            <div class="avatar" aria-label="Climate lab">CL</div>
+          </div>
+        </header>
+        <section class="page-content" id="page-content" aria-live="polite">
+          <div class="loading-state"><span class="spinner"></span>Loading climate observations…</div>
+        </section>
+        <footer class="page-footer">
+          <span>Built from the supplied climate lab datasets</span>
+          <span>Recorded observations · not a forecast</span>
+        </footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
