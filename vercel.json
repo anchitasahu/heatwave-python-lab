@@ -2,13 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "app.py": {
-      "includeFiles": [
-        "climatelabweb/**/*.py",
-        "climatelabweb/*.html",
-        "climatelabweb/*.js",
-        "climatelabweb/*.css",
-        "datasets/*.csv"
-      ]
+      "includeFiles": "{climatelabweb/**,datasets/*.csv}"
     }
   }
 }
