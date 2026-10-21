@@ -1,0 +1,12 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# macOS Finder metadata
+.DS_Store
+
+# Test files
+tests/
+
+# Local Python virtual environment
+.venv/
